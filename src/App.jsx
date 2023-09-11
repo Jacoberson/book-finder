@@ -1,11 +1,20 @@
 import "./App.css";
+import { useState } from "react";
 import Header from "./components/Header";
 import BookCard from "./components/BookCard";
 
 function App() {
+  const [searchInput, setSearchInput] = useState("");
+  const [searchData, setSearchData] = useState([]);
+
   return (
     <>
-      <Header />
+      <Header
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        searchData={searchData}
+        setSearchData={setSearchData}
+      />
       <div className="book-display">
         <BookCard
           image="./img/cursed-child.jpg"

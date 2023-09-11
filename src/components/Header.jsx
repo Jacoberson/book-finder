@@ -1,12 +1,8 @@
-import { useState } from "react";
 import getBooks from "../api.js";
 
-const Header = () => {
-  const [search, setSearch] = useState("");
-  const [searchData, setSearchData] = useState([]);
-
+const Header = ({ searchInput, setSearchInput, searchData, setSearchData }) => {
   const handleSearchChange = event => {
-    setSearch(event.target.value);
+    setSearchInput(event.target.value);
   };
 
   const handleSearch = async () => {
@@ -23,7 +19,7 @@ const Header = () => {
           <div className="search-box">
             <label>
               <input
-                value={search}
+                value={searchInput}
                 onChange={handleSearchChange}
                 id="search"
                 type="search"
