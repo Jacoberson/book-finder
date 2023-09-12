@@ -1,8 +1,23 @@
-# React + Vite
+# Book-Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Overview
+This app was created to practice responsive design and pulling data from an API. It pulls data from the [Google Books API](https://developers.google.com/books/)
 
-Currently, two official plugins are available:
+**LIVE LINK**: https://book-finder-eta.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
+- The user can search for books using title, author, or publisher.
+- Book data displays the image of the book, the title, the author(s), and the publisher
+- The books are sorted into two columns for larger screens and one column for smaller screens.
+- Data is limited to 10 entries so that the API does not time out.
+
+### Running the Project
+1. Clone this project locally
+2. Run npm install in your bash/command line
+3. Run npm run dev in your bash/command line
+4. Search for books!
+
+### Dependencies
+- ESLint
+- React
+- React-DOM
