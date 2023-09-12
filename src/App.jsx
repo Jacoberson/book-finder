@@ -5,7 +5,7 @@ import BookCard from "./components/BookCard";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
-  const [searchData, setSearchData] = useState([]);
+  const [searchData, setSearchData] = useState(null);
 
   return (
     <>
@@ -16,31 +16,18 @@ function App() {
         setSearchData={setSearchData}
       />
       <div className="book-display">
-        <BookCard
-          image="./img/cursed-child.jpg"
-          title="Harry Potter and the Cursed Child -- Parts One and Two (Special
-            Rehearsal Edition"
-          author="No authors found"
-          publisher="Pottermore Publishing"
-        />
-        <BookCard
-          image="./img/cursed-child.jpg"
-          title="Harry Potter and the Sorcerer's Stone"
-          author="J.K. Rowling"
-          publisher="Pottermore Publishing"
-        />
-        <BookCard
-          image="./img/cursed-child.jpg"
-          title="Harry Potter: A History of Magic"
-          author="British Library"
-          publisher="Arthur A. Levine Books"
-        />
-        <BookCard
-          image="./img/cursed-child.jpg"
-          title="The Ivory Tower and Harry Potter"
-          author="Lana A. Whited"
-          publisher="University of Missouri Press"
-        />
+        {searchData
+          ? searchData
+              .map(data => data.volumeInfo)
+              .map(book => (
+                <BookCard
+                  image={book.imageLinks.smallThumbnail}
+                  title={book.title}
+                  author={book.authors.join(", ")}
+                  publisher={book.publisher ? book.publisher : "Unknown"}
+                />
+              ))
+          : ""}
       </div>
     </>
   );

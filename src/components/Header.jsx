@@ -6,7 +6,7 @@ const Header = ({ searchInput, setSearchInput, searchData, setSearchData }) => {
   };
 
   const handleSearch = async () => {
-    const response = await getBooks(search);
+    const response = await getBooks(searchInput);
     setSearchData(response.items);
     console.log(searchData);
   };

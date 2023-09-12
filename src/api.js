@@ -1,13 +1,13 @@
 import axios from "axios";
-const apiUrl = "https://www.googleapis.com/books/v1/volumes?";
-const apiKey = "AIzaSyCiIFk4F8h-4wEqhoKcQ2xStso1h33n69A";
+const API_URL = "https://www.googleapis.com/books/v1/volumes?";
+const API_KEY = "AIzaSyCiIFk4F8h-4wEqhoKcQ2xStso1h33n69A";
 
 const getBooks = async query => {
   const params = {
     q: query,
-    key: apiKey,
+    key: API_KEY,
   };
-  const request = await axios.get(apiUrl, { params });
+  const request = await axios.get(API_URL, { params });
 
   return request.data;
 };
