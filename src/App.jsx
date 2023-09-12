@@ -31,6 +31,7 @@ function App() {
                 title={book.title}
                 author={book.authors.join(", ")}
                 publisher={book.publisher ? book.publisher : "Unknown"}
+                link={book.infoLink}
               />
             ))
         ) : (

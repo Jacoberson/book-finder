@@ -1,4 +1,4 @@
-const BookCard = ({ image, title, author, publisher }) => {
+const BookCard = ({ image, title, author, publisher, link }) => {
   return (
     <div className="book-card">
       <img className="book-image" src={image} alt="1" />
@@ -8,7 +8,9 @@ const BookCard = ({ image, title, author, publisher }) => {
           <h3>By: {author}</h3>
           <h3>Published By: {publisher}</h3>
         </div>
-        <button type="button">See this Book</button>
+        <a href={link} target="_blank">
+          <button type="button">See this Book</button>
+        </a>
       </div>
     </div>
   );
