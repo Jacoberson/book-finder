@@ -11,7 +11,6 @@ function App() {
   const handleSearch = async () => {
     const response = await getBooks(searchInput);
     setSearchData(response.items);
-    console.log(searchData);
   };
 
   return (
@@ -22,21 +21,20 @@ function App() {
         handleSearch={handleSearch}
       />
       <div className="book-display">
-        {searchData ? (
-          searchData
-            .map(data => data.volumeInfo)
-            .map(book => (
-              <BookCard
-                image={book.imageLinks.smallThumbnail}
-                title={book.title}
-                author={book.authors.join(", ")}
-                publisher={book.publisher ? book.publisher : "Unknown"}
-                link={book.infoLink}
-              />
-            ))
-        ) : (
-          <p className="no-books">No books were found</p>
-        )}
+        {searchData
+          ? searchData
+              .map(data => data.volumeInfo)
+              .map(book => (
+                <BookCard
+                  key={book.industryIdentifiers[0].identifier}
+                  image={book.imageLinks.smallThumbnail}
+                  title={book.title}
+                  author={book.authors.join(", ")}
+                  publisher={book.publisher ? book.publisher : "Unknown"}
+                  link={book.infoLink}
+                />
+              ))
+          : ""}
       </div>
     </>
   );
