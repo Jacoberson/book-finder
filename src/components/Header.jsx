@@ -1,14 +1,6 @@
-import getBooks from "../api.js";
-
-const Header = ({ searchInput, setSearchInput, searchData, setSearchData }) => {
+const Header = ({ searchInput, setSearchInput, handleSearch }) => {
   const handleSearchChange = event => {
     setSearchInput(event.target.value);
-  };
-
-  const handleSearch = async () => {
-    const response = await getBooks(searchInput);
-    setSearchData(response.items);
-    console.log(searchData);
   };
 
   return (
