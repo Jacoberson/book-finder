@@ -45,6 +45,8 @@ img {
   position: relative;
   bottom: 60px;
   margin-top: 40px;
+  min-width: 140px;
+  min-height: 180px;
 }
 
 #title {
