@@ -29,7 +29,7 @@ function App() {
                   key={book.industryIdentifiers[0].identifier}
                   image={book.imageLinks.smallThumbnail}
                   title={book.title}
-                  author={book.authors.join(", ")}
+                  author={book.authors ? book.authors.join(", ") : "Unknown"}
                   publisher={book.publisher ? book.publisher : "Unknown"}
                   link={book.infoLink}
                 />
