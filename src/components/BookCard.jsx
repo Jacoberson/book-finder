@@ -1,6 +1,6 @@
 const BookCard = ({ image, title, author, publisher, link }) => {
   return (
-    <div className="book-card">
+    <li className="book-card">
       <img className="book-image" src={image} alt="1" />
       <div className="book-info">
         <div className="book-text">
@@ -12,7 +12,7 @@ const BookCard = ({ image, title, author, publisher, link }) => {
           <button type="button">See this Book</button>
         </a>
       </div>
-    </div>
+    </li>
   );
 };
 
