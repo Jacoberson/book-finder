@@ -7,7 +7,7 @@ This app was created to practice responsive design and pulling data from an API.
 
 ### Features
 - The user can search for books using title, author, or publisher.
-- Book data displays the image of the book, the title, the author(s), and the publisher
+- Book data displays the image of the book, the title, the author(s), the publisher, and a link to view more information
 - The books are sorted into two columns for larger screens and one column for smaller screens.
 - Data is limited to 10 entries so that the API does not time out.
 
