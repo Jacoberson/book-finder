@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
 import BookDisplay from "./components/BookDisplay";
+import EmptyList from "./components/EmptyList";
 import getBooks from "./api.js";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         setSearchInput={setSearchInput}
         handleSearch={handleSearch}
       />
-      <BookDisplay searchData={searchData} />
+      {searchData ? <BookDisplay searchData={searchData} /> : <EmptyList />}
     </>
   );
 }
