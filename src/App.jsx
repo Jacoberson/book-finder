@@ -27,10 +27,10 @@ function App() {
               .map(book => (
                 <BookCard
                   key={book.industryIdentifiers[0].identifier}
-                  image={book.imageLinks.smallThumbnail}
+                  image={book.imageLinks.smallThumbnail || "None"}
                   title={book.title}
                   author={book.authors ? book.authors.join(", ") : "Unknown"}
-                  publisher={book.publisher ? book.publisher : "Unknown"}
+                  publisher={book.publisher || "Unknown"}
                   link={book.infoLink}
                 />
               ))
